@@ -33,7 +33,7 @@ def home():
                 cursor.close()
                 conn.close()
                 return render_template("index.html")
-            except:
+             except:
                 mensaje_error = "Todos los campos son obligatorios. Por favor, completa toda la información."
         else:
             mensaje_error = "Todos los campos son obligatorios. Por favor, completa toda la información."
