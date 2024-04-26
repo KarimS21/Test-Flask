@@ -1,2 +1,0 @@
-Flask @ file:///C:/b/abs_efc024w7fv/croot/flask_1702980041157/work
-pyodbc @ file:///C:/b/abs_90kly0uuwz/croot/pyodbc_1705431396548/work
