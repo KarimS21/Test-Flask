@@ -34,7 +34,7 @@ def home():
                 conn.close()
                 return render_template("index.html")
              except:
-                mensaje_error = "Todos los campos son obligatorios. Por favor, completa toda la información."
+                mensaje_error = "Error en la carga de datos."
         else:
             mensaje_error = "Todos los campos son obligatorios. Por favor, completa toda la información."
 
