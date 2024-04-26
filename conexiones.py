@@ -24,18 +24,15 @@ def home():
         
         # Validar los datos
         if validar_datos(nombre, apellido, ubicacion, email, numero, password):
-             try:
-                conn = conexion.connect()
-                cursor = conn.cursor()
-                sql_insert = "INSERT INTO usuario (nombre, apellido, ubicacion, email, numero, password) VALUES (?, ?, ?, ?, ?, ?)"
-                cursor.execute(sql_insert, (nombre, apellido, ubicacion, email, numero, password))
-                conn.commit()
-                session["nombre"] = nombre.lower()
-                cursor.close()
-                conn.close()
-                return render_template("index.html")
-             except:
-                mensaje_error = "Error en la carga de datos."
+            conn = conexion.connect()
+            cursor = conn.cursor()
+            sql_insert = "INSERT INTO usuario (nombre, apellido, ubicacion, email, numero, password) VALUES (?, ?, ?, ?, ?, ?)"
+            cursor.execute(sql_insert, (nombre, apellido, ubicacion, email, numero, password))
+            conn.commit()
+            session["nombre"] = nombre.lower()
+            cursor.close()
+            conn.close()
+            return render_template("index.html")
         else:
             mensaje_error = "Todos los campos son obligatorios. Por favor, completa toda la información."
 
