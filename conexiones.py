@@ -25,6 +25,7 @@ def home():
         # Validar los datos
         if validar_datos(nombre, apellido, ubicacion, email, numero, password):
              try:
+                conn = conexion.connect()
                 cursor = conn.cursor()
                 sql_insert = "INSERT INTO usuario (nombre, apellido, ubicacion, email, numero, password) VALUES (?, ?, ?, ?, ?, ?)"
                 cursor.execute(sql_insert, (nombre, apellido, ubicacion, email, numero, password))
